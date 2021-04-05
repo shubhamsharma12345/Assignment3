@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title></title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../Content/bootstrap.min.css" />
+    <script src="../Scripts/jquery-3.4.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+
+    <style>
+        .title {
+            margin-bottom: 10px;
+            text-align: center;
+            width: 210px;
+            color: green;
+            border: solid black 2px;
+        }
+
+        input[type="button"] {
+            background-color: green;
+            color: black;
+            border: solid black 2px;
+            width: 100%
+        }
+
+        input[type="text"] {
+            background-color: white;
+            border: solid black 2px;
+            width: 100%
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            alert("Hiiii........Page is loaded");
+
+            $("#change").click(function () {
+                let ele = $("#result");
+                for (let i = 0; i < ele.length; i++) {
+
+                    ele[i].style.backgroundColor = "yellow";
+                }
+            });
+
+            $(".btn1").click(function () {
+                $("p").fadeOut();
+            });
+            $(".btn2").click(function () {
+                $("p").fadeIn();
+            });
+        });
+
+        function dis(val) {
+            document.getElementById("result").value += val
+        }
+
+
+        function solve() {
+            let x = document.getElementById("result").value
+            let y = eval(x)
+            document.getElementById("result").value = y
+        }
+
+
+        function clr() {
+            document.getElementById("result").value = ""
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <p>Click fade in to hide text</p>
+        <button class="btn1">Fade out</button>
+        <button class="btn2">Fade in</button>
+    </center>
+    <table border="1">
+        <tr>
+            <td colspan="2"><input type="text" id="result" /></td>
+           <td> <input type="button" value="change color" id="change" /></td>
+            <!-- clr() function will call clr to clear all value -->
+            <td><input type="button" value="c" onclick="clr()" /> </td>
+        </tr>
+        <tr>
+
+            <td><input type="button" value="1" onclick="dis('1')" /> </td>
+            <td><input type="button" value="2" onclick="dis('2')" /> </td>
+            <td><input type="button" value="3" onclick="dis('3')" /> </td>
+            <td><input type="button" value="/" onclick="dis('/')" /> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="dis('4')" /> </td>
+            <td><input type="button" value="5" onclick="dis('5')" /> </td>
+            <td><input type="button" value="6" onclick="dis('6')" /> </td>
+            <td><input type="button" value="-" onclick="dis('-')" /> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="dis('7')" /> </td>
+            <td><input type="button" value="8" onclick="dis('8')" /> </td>
+            <td><input type="button" value="9" onclick="dis('9')" /> </td>
+            <td><input type="button" value="+" onclick="dis('+')" /> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="." onclick="dis('.')" /> </td>
+            <td><input type="button" value="0" onclick="dis('0')" /> </td>
+
+
+            <td><input type="button" value="=" onclick="solve()" /> </td>
+            <td><input type="button" value="*" onclick="dis('*')" /> </td>
+        </tr>
+    </table>
+   
+
+</body>
+</html>
